@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-# sys lib to ret the args
+# library to get arguments
 import sys
 
 
-# this func will the fact unleach
-def get_fact():
+# fn unpack number factorial
+def fc():
     """
-    this function will convert num to this n=p*q
+    function fc to search file to convert number and format n=p*q
     """
     try:
         revfile = sys.argv[1]
@@ -29,4 +29,4 @@ def get_fact():
 
 
 # run the prog
-get_fact()
+fc()
