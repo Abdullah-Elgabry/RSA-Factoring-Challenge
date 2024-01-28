@@ -1,7 +1,33 @@
-#!/usr/bin/bash
-FILE=$1
-while read NUMBERS;
-do
-	factors=($(factor $NUMBERS))
-	echo "$NUMBERS=$(($NUMBERS/${factors[1]}))*${factors[1]}"
-done < $FILE
+#!/usr/bin/python3
+
+# sys lib to ret the args
+import sys
+
+
+# this func will the fact unleach
+def modufrm():
+    """
+    this func will cvt numb to this n=p*q
+    """
+    try:
+        getmod = sys.argv[1]
+        with open(getmod) as f:
+            for mdret in f:
+                mdret = int(mdret)
+                if mdret % 2 == 0:
+                        print("{}={}*{}".format(mdret, mdret // 2, 2))
+                        continue
+                i = 3
+                while i < mdret // 2:
+                    if mdret % i == 0:
+                        print("{}={}*{}".format(mdret, mdret // i, i))
+                        break
+                    i = i + 2
+                if i == (mdret // 2) + 1:
+                    print("{}={}*{}".format(mdret, mdret, 1))
+    except (IndexError):
+        pass
+
+
+# run the prog
+modufrm()
