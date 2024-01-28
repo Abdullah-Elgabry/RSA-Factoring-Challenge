@@ -1,26 +1,32 @@
 #!/usr/bin/python3
+# sys lib to ret the args
 import sys
-def funcvt():
+
+
+# this func will the fact unleach
+def get_fact():
     """
-    this function  will cvt num to this format n=p*q
+    this function will convert num to this n=p*q
     """
     try:
-        opfl = sys.argv[1]
-        with open(opfl) as s:
-            for frmt in s:
-                frmt = int(frmt)
-                if frmt % 2 == 0:
-                        print("{}={}*{}".format(frmt, frmt // 2, 2))
+        modfact = sys.argv[1]
+        with open(modfact) as f:
+            for modconv in f:
+                modconv = int(modconv)
+                if modconv % 2 == 0:
+                        print("{}={}*{}".format(modconv, modconv // 2, 2))
                         continue
                 i = 3
-                while i < frmt // 2:
-                    if frmt % i == 0:
-                        print("{}={}*{}".format(frmt, frmt // i, i))
+                while i < modconv // 2:
+                    if modconv % i == 0:
+                        print("{}={}*{}".format(modconv, modconv // i, i))
                         break
                     i = i + 2
-                if i == (frmt // 2) + 1:
-                    print("{}={}*{}".format(frmt, frmt, 1))
+                if i == (modconv // 2) + 1:
+                    print("{}={}*{}".format(modconv, modconv, 1))
     except (IndexError):
         pass
 
-funcvt()
+
+# run the prog
+get_fact()
