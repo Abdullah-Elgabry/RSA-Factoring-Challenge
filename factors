@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+import sys
+def funcvt():
+    """
+    this function  will cvt num to this format n=p*q
+    """
+    try:
+        opfl = sys.argv[1]
+        with open(opfl) as s:
+            for frmt in s:
+                frmt = int(frmt)
+                if frmt % 2 == 0:
+                        print("{}={}*{}".format(frmt, frmt // 2, 2))
+                        continue
+                i = 3
+                while i < frmt // 2:
+                    if frmt % i == 0:
+                        print("{}={}*{}".format(frmt, frmt // i, i))
+                        break
+                    i = i + 2
+                if i == (frmt // 2) + 1:
+                    print("{}={}*{}".format(frmt, frmt, 1))
+    except (IndexError):
+        pass
+
+funcvt()
